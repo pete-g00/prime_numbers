@@ -1,0 +1,12 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$kml-creation-lessons-primary: mat-palette($mat-blue, 900);
+$kml-creation-lessons-accent: mat-palette($mat-pink, A200, A100, A400);
+
+$kml-creation-lessons-warn: mat-palette($mat-red);
+
+$kml-creation-lessons-theme: mat-light-theme($kml-creation-lessons-primary, $kml-creation-lessons-accent, $kml-creation-lessons-warn);
+
+@include angular-material-theme($kml-creation-lessons-theme);
+

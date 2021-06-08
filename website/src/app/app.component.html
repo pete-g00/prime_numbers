@@ -1,0 +1,14 @@
+<header>
+    <mat-toolbar role="heading" class="mat-elevation-z10" color="primary">Is the number prime?</mat-toolbar>
+</header>
+<mat-toolbar></mat-toolbar>
+<main fxLayout="column" fxLayoutAlign="start center">
+    <h1>Enter a number to check whether it is a prime.</h1>
+    <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>Enter a number greater than 1</mat-label>
+        <input matInput type="number" autocomplete="off" [formControl]="control" (keydown)="onKeyDown($event)">
+    </mat-form-field>
+    <button mat-raised-button (click)="onClick()">Check</button>
+    <h3>{{ isPrimeMessage }}</h3>
+    <h4>{{ factorsMessage }}</h4>
+</main>
