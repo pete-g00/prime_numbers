@@ -14,6 +14,16 @@ export class AppComponent {
   
   onClick():void {
     const value = this.control.value as number;
+    if (value < 1) {
+      this.isPrimeMessage = `Please enter a number greater than 1`;
+      this.factorsMessage = null;
+      return;
+    } else if (!Number.isInteger(value)) {
+      this.isPrimeMessage = `Please enter an integer!`;
+      this.factorsMessage = null;
+      return;
+    }
+
     const primes = primesUntil(Math.max(2, Math.floor(Math.sqrt(value))));
     const factors = primeFactorisation(value, primes);
     if (factors.length == 0){
